@@ -1,8 +1,8 @@
 const steps = [
-  { num: "01", title: "Profissional agenda", desc: "Escolha o horário e a sala pelo sistema." },
-  { num: "02", title: "Paciente realiza pagamento", desc: "Pagamento integrado com particular e convênios." },
-  { num: "03", title: "Repasse automático", desc: "Sistema direciona o repasse automaticamente." },
-  { num: "04", title: "Transparência total", desc: "Controle financeiro completo em tempo real." },
+  { num: "01", title: "Agende pelo sistema", desc: "Escolha o horário e a sala em segundos. Sem burocracia, sem intermediários." },
+  { num: "02", title: "Paciente paga integrado", desc: "Pagamento automatizado — particular ou convênio. Sem cobranças manuais." },
+  { num: "03", title: "Repasse automático", desc: "O sistema direciona o valor para você automaticamente. Como uma fintech médica." },
+  { num: "04", title: "Controle total em tempo real", desc: "Dashboard financeiro completo. Saiba exatamente quanto entrou e quanto é seu." },
 ];
 
 const ModeloSection = () => {
@@ -13,9 +13,12 @@ const ModeloSection = () => {
           <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
             Como funciona
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Simples, transparente e eficiente
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Gestão financeira que trabalha por você
           </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Transparência total e repasse automático — tecnologia de fintech aplicada à saúde.
+          </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -29,7 +32,7 @@ const ModeloSection = () => {
                 {step.num}
               </div>
               <h3 className="text-lg font-bold text-foreground mb-2">{step.title}</h3>
-              <p className="text-muted-foreground text-sm">{step.desc}</p>
+              <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>
