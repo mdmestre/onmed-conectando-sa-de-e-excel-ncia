@@ -11,7 +11,7 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/40" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -23,25 +23,25 @@ const HeroSection = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-foreground mb-6 animate-fade-up"
             style={{ animationDelay: "0.1s" }}
           >
-            Um novo padrão em estrutura médica{" "}
-            <span className="onmed-gradient-text">compartilhada.</span>
+            Atenda com excelência,{" "}
+            <span className="onmed-gradient-text">sem o peso de um consultório próprio.</span>
           </h1>
           <p
             className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Espaços modernos, tecnologia integrada e gestão inteligente para
-            profissionais da saúde.
+            Estrutura hospitalar de alto padrão, gestão financeira automatizada e
+            zero dor de cabeça. Você cuida do paciente — nós cuidamos de todo o resto.
           </p>
           <div
             className="flex flex-col sm:flex-row gap-4 animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
             <a
-              href="#estrutura"
+              href="#comparativo"
               className="onmed-gradient text-primary-foreground px-8 py-4 rounded-lg text-base font-semibold hover:opacity-90 transition-opacity text-center"
             >
-              Quero conhecer a estrutura
+              Veja quanto você pode economizar
             </a>
             <a
               href="https://wa.me/5534999999999"
@@ -49,7 +49,7 @@ const HeroSection = () => {
               rel="noopener noreferrer"
               className="border border-border bg-background/60 backdrop-blur-sm text-foreground px-8 py-4 rounded-lg text-base font-semibold hover:bg-muted transition-colors text-center"
             >
-              Agendar visita
+              Agendar visita presencial
             </a>
           </div>
         </div>

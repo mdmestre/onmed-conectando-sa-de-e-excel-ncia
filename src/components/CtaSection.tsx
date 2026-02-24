@@ -3,11 +3,11 @@ const CtaSection = () => {
     <section className="py-24 lg:py-32 onmed-gradient">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-6">
-          Eleve o padrão do seu atendimento.
+          Pare de pagar por estrutura que você não usa.
         </h2>
         <p className="text-primary-foreground/80 text-lg mb-10 max-w-xl mx-auto">
-          Junte-se a profissionais que já escolheram a OnMed como base para
-          atender com excelência.
+          Junte-se aos profissionais que já reduziram custos, aumentaram a margem
+          e elevaram o padrão do atendimento com a OnMed.
         </p>
         <a
           href="https://wa.me/5534999999999"

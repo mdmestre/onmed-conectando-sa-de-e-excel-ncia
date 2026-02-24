@@ -1,12 +1,12 @@
-import { MapPin, Headphones, Armchair, CreditCard, FileCheck, Clock } from "lucide-react";
+import { MapPin, Wallet, Armchair, BarChart3, Clock, ShieldCheck } from "lucide-react";
 
 const items = [
-  { icon: MapPin, title: "Localização estratégica", desc: "Dentro do Hospital Referência de Uberlândia" },
-  { icon: Headphones, title: "Recepção e apoio administrativo", desc: "Equipe dedicada para recepcionar seus pacientes" },
-  { icon: Armchair, title: "Salas equipadas", desc: "Consultórios prontos com equipamentos de qualidade" },
-  { icon: CreditCard, title: "Integração com pagamentos", desc: "Sistema integrado para particular e convênios" },
-  { icon: FileCheck, title: "Estrutura pronta", desc: "Para atendimento particular e convênios" },
-  { icon: Clock, title: "Modelo flexível", desc: "Por hora, turno ou mensal — você escolhe" },
+  { icon: MapPin, title: "Dentro de um hospital ativo", desc: "Credibilidade imediata e fluxo natural de pacientes — sem precisar construir reputação do zero." },
+  { icon: Wallet, title: "Repasse financeiro automático", desc: "Controle em tempo real de tudo que entra. Transparência total como uma fintech médica." },
+  { icon: Armchair, title: "Pronto para atender amanhã", desc: "Consultórios equipados, recepção profissional e sistema de gestão — é só chegar." },
+  { icon: BarChart3, title: "Maximize sua margem", desc: "Pague apenas pelo tempo que usar. Sem aluguel fixo, sem funcionário, sem surpresas." },
+  { icon: ShieldCheck, title: "Particular e convênios", desc: "Estrutura integrada para atender qualquer tipo de paciente, sem burocracia extra." },
+  { icon: Clock, title: "Escale no seu ritmo", desc: "Por hora, turno ou mensal. Comece pequeno e cresça conforme sua demanda aumenta." },
 ];
 
 const DiferenciaisSection = () => {
@@ -15,10 +15,10 @@ const DiferenciaisSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
-            Diferenciais
+            Vantagens estratégicas
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Tudo que você precisa, em um só lugar
+            Não é só espaço. É infraestrutura para crescer.
           </h2>
         </div>
 
