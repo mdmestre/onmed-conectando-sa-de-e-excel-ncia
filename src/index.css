@@ -7,34 +7,34 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 210 25% 15%;
+    --foreground: 210 20% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 25% 15%;
+    --card-foreground: 210 20% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 25% 15%;
+    --popover-foreground: 210 20% 20%;
 
-    --primary: 201 76% 36%;
+    --primary: 201 55% 32%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 160 35% 45%;
+    --secondary: 160 25% 40%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 210 15% 50%;
+    --muted: 210 15% 96%;
+    --muted-foreground: 210 10% 50%;
 
-    --accent: 160 30% 94%;
-    --accent-foreground: 160 35% 30%;
+    --accent: 201 20% 95%;
+    --accent-foreground: 201 55% 25%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 210 20% 92%;
-    --input: 210 20% 92%;
-    --ring: 201 76% 36%;
+    --border: 210 15% 90%;
+    --input: 210 15% 90%;
+    --ring: 201 55% 32%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -45,36 +45,36 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* OnMed custom tokens */
-    --onmed-green: 160 35% 45%;
-    --onmed-green-light: 160 30% 94%;
-    --onmed-blue: 201 76% 36%;
-    --onmed-blue-light: 201 60% 95%;
-    --onmed-gradient: linear-gradient(135deg, hsl(160 35% 45%), hsl(201 76% 36%));
-    --onmed-shadow: 0 4px 24px -4px hsl(201 76% 36% / 0.12);
-    --onmed-shadow-lg: 0 12px 40px -8px hsl(201 76% 36% / 0.18);
+    /* OnMed institutional tokens */
+    --onmed-green: 160 25% 40%;
+    --onmed-green-light: 160 15% 95%;
+    --onmed-blue: 201 55% 32%;
+    --onmed-blue-light: 201 30% 95%;
+    --onmed-gray: 210 10% 55%;
+    --onmed-shadow: 0 2px 16px -4px hsl(210 15% 50% / 0.1);
+    --onmed-shadow-lg: 0 8px 30px -8px hsl(210 15% 50% / 0.14);
   }
 
   .dark {
-    --background: 210 25% 8%;
-    --foreground: 210 20% 96%;
-    --card: 210 25% 10%;
-    --card-foreground: 210 20% 96%;
-    --popover: 210 25% 10%;
-    --popover-foreground: 210 20% 96%;
-    --primary: 201 70% 50%;
+    --background: 210 20% 8%;
+    --foreground: 210 15% 92%;
+    --card: 210 20% 10%;
+    --card-foreground: 210 15% 92%;
+    --popover: 210 20% 10%;
+    --popover-foreground: 210 15% 92%;
+    --primary: 201 50% 45%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 160 35% 40%;
+    --secondary: 160 25% 38%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 210 20% 15%;
-    --muted-foreground: 210 15% 60%;
-    --accent: 160 25% 15%;
-    --accent-foreground: 160 35% 70%;
+    --muted: 210 15% 15%;
+    --muted-foreground: 210 10% 60%;
+    --accent: 201 20% 15%;
+    --accent-foreground: 201 40% 70%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 210 20% 18%;
-    --input: 210 20% 18%;
-    --ring: 201 70% 50%;
+    --border: 210 15% 18%;
+    --input: 210 15% 18%;
+    --ring: 201 50% 45%;
   }
 }
 
@@ -94,11 +94,11 @@
 
 @layer utilities {
   .onmed-gradient {
-    background: linear-gradient(135deg, hsl(160 35% 45%), hsl(201 76% 36%));
+    background: linear-gradient(135deg, hsl(160 25% 40%), hsl(201 55% 32%));
   }
 
   .onmed-gradient-text {
-    background: linear-gradient(135deg, hsl(160 35% 45%), hsl(201 76% 36%));
+    background: linear-gradient(135deg, hsl(160 25% 40%), hsl(201 55% 32%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

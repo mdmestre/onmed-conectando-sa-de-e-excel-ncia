@@ -1,24 +1,23 @@
 const EmocionalSection = () => {
   return (
-    <section className="py-24 lg:py-32 bg-muted/30">
+    <section className="py-24 lg:py-32 bg-background border-t border-border">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-foreground mb-8 leading-tight">
-            Seu foco deve ser o paciente.{" "}
-            <span className="onmed-gradient-text">O resto é nossa responsabilidade.</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 leading-tight">
+            Seu foco no paciente. Nossa responsabilidade com todo o resto.
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl leading-relaxed mb-10">
-            Você não se formou para lidar com aluguel, contas, funcionários e burocracia.
-            Você se formou para transformar vidas. Na OnMed, a única coisa que você
-            precisa se preocupar é com a excelência do seu atendimento.
+          <p className="text-muted-foreground leading-relaxed mb-10 max-w-xl mx-auto">
+            A OnMed cuida da estrutura, da recepção, da gestão financeira e da
+            tecnologia para que o profissional possa se dedicar integralmente ao
+            que mais importa: o atendimento de excelência.
           </p>
           <a
             href="https://wa.me/5534999999999"
             target="_blank"
             rel="noopener noreferrer"
-            className="onmed-gradient text-primary-foreground px-10 py-4 rounded-lg text-base font-bold hover:opacity-90 transition-opacity inline-block"
+            className="inline-block border border-primary text-primary px-7 py-3.5 rounded text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
           >
-            Quero conhecer a OnMed
+            Falar com a equipe
           </a>
         </div>
       </div>
