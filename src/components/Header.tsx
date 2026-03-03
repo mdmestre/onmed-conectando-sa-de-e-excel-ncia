@@ -2,10 +2,12 @@ import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo-onmed.png";
+import AgendarVisitaDialog from "@/components/AgendarVisitaDialog";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [agendarOpen, setAgendarOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -75,14 +77,12 @@ const Header = () => {
           </div>
         </nav>
 
-        <a
-          href="https://wa.me/5534999999999"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={() => setAgendarOpen(true)}
           className="hidden md:inline-block bg-primary text-primary-foreground px-5 py-2 rounded text-xs font-semibold hover:bg-primary/90 transition-colors"
         >
           Agendar visita
-        </a>
+        </button>
 
         <button
           className="md:hidden text-foreground"
@@ -122,16 +122,15 @@ const Header = () => {
               Profissionais
             </Link>
           </div>
-          <a
-            href="https://wa.me/5534999999999"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block mt-3 bg-primary text-primary-foreground px-5 py-2.5 rounded text-sm font-semibold text-center"
+          <button
+            onClick={() => { setMenuOpen(false); setAgendarOpen(true); }}
+            className="block w-full mt-3 bg-primary text-primary-foreground px-5 py-2.5 rounded text-sm font-semibold text-center"
           >
             Agendar visita
-          </a>
+          </button>
         </nav>
       )}
+      <AgendarVisitaDialog open={agendarOpen} onOpenChange={setAgendarOpen} />
     </header>
   );
 };
