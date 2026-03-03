@@ -8,6 +8,7 @@ import ModeloSection from "@/components/ModeloSection";
 import ComparativoSection from "@/components/ComparativoSection";
 import ProvasSociaisSection from "@/components/ProvasSociaisSection";
 import EmocionalSection from "@/components/EmocionalSection";
+import EcosistemaBanner from "@/components/EcosistemaBanner";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 
@@ -25,6 +26,7 @@ const Index = () => {
         <ComparativoSection />
         <ProvasSociaisSection />
         <EmocionalSection />
+        <EcosistemaBanner />
         <CtaSection />
       </main>
       <Footer />
