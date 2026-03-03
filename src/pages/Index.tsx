@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import EstruturaSection from "@/components/EstruturaSection";
 import DiferenciaisSection from "@/components/DiferenciaisSection";
 import ParaQuemSection from "@/components/ParaQuemSection";
@@ -30,6 +31,7 @@ const Index = () => {
         <CtaSection />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 };
