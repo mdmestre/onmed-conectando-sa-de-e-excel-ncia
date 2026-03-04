@@ -26,22 +26,22 @@ const Header = () => {
     { label: "Diferenciais", href: "#diferenciais" },
     { label: "Especialidades", href: "#para-quem" },
     { label: "Como funciona", href: "#modelo" },
-    { label: "Contato", href: "#contato" },
+    { label: "Contatos", href: "#contato" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto flex items-center justify-between h-16 px-6">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
+      <div className="container mx-auto flex items-center justify-between h-20 px-6">
         <Link to="/" className="flex-shrink-0">
-          <img src={logo} alt="OnMed – Centro Integrado de Saúde" className="h-8" />
+          <img src={logo} alt="OnMed – Centro Integrado de Saúde" className="h-10" />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-7">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-xs font-medium text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wide"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors uppercase tracking-wide"
             >
               {item.label}
             </a>
@@ -51,7 +51,7 @@ const Header = () => {
           <div ref={dropdownRef} className="relative">
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wide"
+              className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-primary transition-colors uppercase tracking-wide"
             >
               Ecossistema
               <ChevronDown className={`w-3.5 h-3.5 transition-transform ${dropdownOpen ? "rotate-180" : ""}`} />
@@ -79,22 +79,22 @@ const Header = () => {
 
         <button
           onClick={() => setAgendarOpen(true)}
-          className="hidden md:inline-block bg-primary text-primary-foreground px-5 py-2 rounded text-xs font-semibold hover:bg-primary/90 transition-colors"
+          className="hidden lg:inline-block bg-primary text-primary-foreground px-6 py-2.5 rounded-md text-sm font-semibold hover:bg-primary/90 transition-colors"
         >
           Agendar visita
         </button>
 
         <button
-          className="md:hidden text-foreground"
+          className="lg:hidden text-foreground"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
-          {menuOpen ? <X size={20} /> : <Menu size={20} />}
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {menuOpen && (
-        <nav className="md:hidden bg-background border-t border-border px-6 py-4">
+        <nav className="lg:hidden bg-background border-t border-border px-6 py-4">
           {navItems.map((item) => (
             <a
               key={item.href}
