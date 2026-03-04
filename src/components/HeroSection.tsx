@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { MapPin } from "lucide-react";
 import heroImg from "@/assets/hero-clinic.jpg";
 import AgendarVisitaDialog from "@/components/AgendarVisitaDialog";
 
@@ -21,23 +20,13 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 border border-primary-foreground/20 rounded-full px-4 py-1.5 mb-7 backdrop-blur-sm">
-            <MapPin className="w-3.5 h-3.5 text-primary-foreground/80" />
-            <span className="text-xs font-medium text-primary-foreground/80 uppercase tracking-wider">
-              Dentro do Hospital Referência · Uberlândia
-            </span>
-          </div>
-
           <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.15] tracking-tight text-primary-foreground mb-5">
-            Consultório equipado dentro de hospital.{" "}
-            <span className="text-primary-foreground/65">
-              Você atende. A OnMed cuida do resto.
-            </span>
+            Consultório equipado{" "}
+            <br className="hidden md:block" />
+            dentro de hospital.
           </h1>
-          <p className="text-base md:text-lg text-primary-foreground/70 leading-relaxed mb-10 max-w-xl">
-            Estrutura hospitalar completa, recepção profissional, gestão
-            financeira automatizada e tecnologia integrada — sem a burocracia
-            de manter um consultório próprio.
+          <p className="text-lg md:text-xl text-primary-foreground/60 font-light leading-relaxed mb-10 max-w-lg">
+            Você atende. A OnMed cuida do resto.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <button
