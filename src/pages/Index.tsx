@@ -7,7 +7,7 @@ import DiferenciaisSection from "@/components/DiferenciaisSection";
 import ParaQuemSection from "@/components/ParaQuemSection";
 import ModeloSection from "@/components/ModeloSection";
 import ComparativoSection from "@/components/ComparativoSection";
-
+import ProvasSociaisSection from "@/components/ProvasSociaisSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import EmocionalSection from "@/components/EmocionalSection";
 import EcosistemaBanner from "@/components/EcosistemaBanner";
@@ -26,7 +26,7 @@ const Index = () => {
         <ParaQuemSection />
         <ModeloSection />
         <ComparativoSection />
-        
+        <ProvasSociaisSection />
         <TestimonialsSection />
         <EmocionalSection />
         <EcosistemaBanner />
