@@ -22,7 +22,7 @@ const CtaSection = () => {
             Agendar visita
           </button>
           <a
-            href="mailto:contato@onmed.com.br"
+            href="mailto:gerencia@onmedcis.com.br"
             className="border border-primary-foreground/30 text-primary-foreground px-8 py-3.5 rounded text-sm font-semibold hover:bg-primary-foreground/10 transition-colors"
           >
             Solicitar apresentação

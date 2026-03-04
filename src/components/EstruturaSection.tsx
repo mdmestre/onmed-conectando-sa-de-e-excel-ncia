@@ -1,6 +1,9 @@
+import { useState } from "react";
+import { ArrowRight } from "lucide-react";
 import recepcaoImg from "@/assets/recepcao.jpg";
 import consultorioImg from "@/assets/consultorio.jpg";
 import heroImg from "@/assets/hero-clinic.jpg";
+import AgendarVisitaDialog from "@/components/AgendarVisitaDialog";
 
 const spaces = [
   { img: heroImg, title: "Recepção", desc: "Ambiente acolhedor com atendimento profissional para recepcionar pacientes." },
@@ -9,6 +12,8 @@ const spaces = [
 ];
 
 const EstruturaSection = () => {
+  const [agendarOpen, setAgendarOpen] = useState(false);
+
   return (
     <section id="estrutura" className="py-24 lg:py-32 bg-muted/30">
       <div className="container mx-auto px-6">
@@ -43,9 +48,25 @@ const EstruturaSection = () => {
             </div>
           ))}
         </div>
+
+        {/* Mini-CTA */}
+        <div className="mt-14 text-center">
+          <p className="text-muted-foreground text-sm mb-5">
+            Quer conhecer pessoalmente? Agende uma visita sem compromisso.
+          </p>
+          <button
+            onClick={() => setAgendarOpen(true)}
+            className="inline-flex items-center gap-2 border border-primary text-primary px-6 py-3 rounded text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
+            Ver a estrutura ao vivo
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
       </div>
+      <AgendarVisitaDialog open={agendarOpen} onOpenChange={setAgendarOpen} />
     </section>
   );
 };
 
 export default EstruturaSection;
+

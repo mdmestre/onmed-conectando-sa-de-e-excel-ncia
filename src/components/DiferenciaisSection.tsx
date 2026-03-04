@@ -1,4 +1,6 @@
-import { MapPin, Wallet, Armchair, BarChart3, Clock, ShieldCheck } from "lucide-react";
+import { useState } from "react";
+import { MapPin, Wallet, Armchair, BarChart3, Clock, ShieldCheck, ArrowRight } from "lucide-react";
+import AgendarVisitaDialog from "@/components/AgendarVisitaDialog";
 
 const items = [
   { icon: MapPin, title: "Localização hospitalar", desc: "Dentro do Hospital Referência de Uberlândia, com fluxo natural de pacientes e credibilidade institucional." },
@@ -10,6 +12,8 @@ const items = [
 ];
 
 const DiferenciaisSection = () => {
+  const [agendarOpen, setAgendarOpen] = useState(false);
+
   return (
     <section id="diferenciais" className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-6">
@@ -26,7 +30,7 @@ const DiferenciaisSection = () => {
           {items.map((item) => (
             <div
               key={item.title}
-              className="p-7 rounded-lg border border-border bg-card hover:onmed-shadow transition-shadow duration-300"
+              className="p-7 rounded-lg border border-border bg-card hover:shadow-md transition-shadow duration-300"
             >
               <item.icon className="w-5 h-5 text-primary mb-4" />
               <h3 className="text-sm font-semibold text-foreground mb-2">{item.title}</h3>
@@ -34,9 +38,25 @@ const DiferenciaisSection = () => {
             </div>
           ))}
         </div>
+
+        {/* Mini-CTA */}
+        <div className="mt-14 text-center">
+          <p className="text-muted-foreground text-sm mb-5">
+            Pronto para simplificar sua prática médica?
+          </p>
+          <button
+            onClick={() => setAgendarOpen(true)}
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded text-sm font-semibold hover:bg-primary/90 transition-colors"
+          >
+            Agendar visita à estrutura
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
       </div>
+      <AgendarVisitaDialog open={agendarOpen} onOpenChange={setAgendarOpen} />
     </section>
   );
 };
 
 export default DiferenciaisSection;
+

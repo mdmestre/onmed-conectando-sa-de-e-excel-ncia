@@ -15,24 +15,24 @@
     --popover: 0 0% 100%;
     --popover-foreground: 210 20% 20%;
 
-    --primary: 201 55% 32%;
+    --primary: 207 79% 40%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 160 25% 40%;
+    --secondary: 161 38% 39%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 15% 96%;
     --muted-foreground: 210 10% 50%;
 
-    --accent: 201 20% 95%;
-    --accent-foreground: 201 55% 25%;
+    --accent: 207 30% 95%;
+    --accent-foreground: 207 79% 25%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 210 15% 90%;
     --input: 210 15% 90%;
-    --ring: 201 55% 32%;
+    --ring: 207 79% 40%;
 
     --radius: 0.5rem;
 
@@ -46,10 +46,10 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* OnMed institutional tokens */
-    --onmed-green: 160 25% 40%;
-    --onmed-green-light: 160 15% 95%;
-    --onmed-blue: 201 55% 32%;
-    --onmed-blue-light: 201 30% 95%;
+    --onmed-green: 161 38% 39%;
+    --onmed-green-light: 161 20% 95%;
+    --onmed-blue: 207 79% 40%;
+    --onmed-blue-light: 207 40% 95%;
     --onmed-gray: 210 10% 55%;
     --onmed-shadow: 0 2px 16px -4px hsl(210 15% 50% / 0.1);
     --onmed-shadow-lg: 0 8px 30px -8px hsl(210 15% 50% / 0.14);
@@ -62,19 +62,19 @@
     --card-foreground: 210 15% 92%;
     --popover: 210 20% 10%;
     --popover-foreground: 210 15% 92%;
-    --primary: 201 50% 45%;
+    --primary: 207 75% 50%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 160 25% 38%;
+    --secondary: 161 38% 45%;
     --secondary-foreground: 0 0% 100%;
     --muted: 210 15% 15%;
     --muted-foreground: 210 10% 60%;
-    --accent: 201 20% 15%;
-    --accent-foreground: 201 40% 70%;
+    --accent: 207 30% 15%;
+    --accent-foreground: 207 60% 70%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 210 15% 18%;
     --input: 210 15% 18%;
-    --ring: 201 50% 45%;
+    --ring: 207 75% 50%;
   }
 }
 
@@ -94,11 +94,11 @@
 
 @layer utilities {
   .onmed-gradient {
-    background: linear-gradient(135deg, hsl(160 25% 40%), hsl(201 55% 32%));
+    background: linear-gradient(135deg, hsl(161 38% 39%), hsl(207 79% 40%));
   }
 
   .onmed-gradient-text {
-    background: linear-gradient(135deg, hsl(160 25% 40%), hsl(201 55% 32%));
+    background: linear-gradient(135deg, hsl(161 38% 39%), hsl(207 79% 40%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

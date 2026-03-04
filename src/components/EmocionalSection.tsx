@@ -12,7 +12,7 @@ const EmocionalSection = () => {
             que mais importa: o atendimento de excelência.
           </p>
           <a
-            href="https://wa.me/5534999999999"
+            href="https://wa.me/5534984253885"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block border border-primary text-primary px-7 py-3.5 rounded text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"

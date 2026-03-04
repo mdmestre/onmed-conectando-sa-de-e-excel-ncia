@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Dialog,
   DialogContent,
@@ -16,8 +17,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Building2, Armchair, Users, HeartHandshake } from "lucide-react";
+import { Building2, Armchair, Users, HeartHandshake, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/lib/supabase";
 
 interface AgendarVisitaDialogProps {
   open: boolean;
@@ -32,6 +34,8 @@ const destaques = [
 ];
 
 const AgendarVisitaDialog = ({ open, onOpenChange }: AgendarVisitaDialogProps) => {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
@@ -42,18 +46,38 @@ const AgendarVisitaDialog = ({ open, onOpenChange }: AgendarVisitaDialogProps) =
     locacao: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!formData.nome.trim() || !formData.email.trim() || !formData.telefone.trim()) {
-      toast.error("Preencha os campos obrigatórios.");
+      toast.error("Preencha os campos obrigatórios: nome, e-mail e telefone.");
       return;
     }
-    const msg = encodeURIComponent(
-      `Olá! Gostaria de agendar uma visita.\n\nNome: ${formData.nome}\nE-mail: ${formData.email}\nTelefone: ${formData.telefone}\nMédico: ${formData.isMedico || "Não informado"}\nEspecialidade: ${formData.especialidade || "Não informada"}\nÁrea de interesse: ${formData.areaInteresse || "Não informada"}\nLocação: ${formData.locacao || "Não informada"}`
-    );
-    window.open(`https://wa.me/5534999999999?text=${msg}`, "_blank");
-    toast.success("Redirecionando para o WhatsApp...");
+
+    setLoading(true);
+
+    const { error } = await supabase.from("agendamentos").insert([
+      {
+        nome: formData.nome.trim(),
+        email: formData.email.trim(),
+        telefone: formData.telefone.trim(),
+        is_medico: formData.isMedico || null,
+        especialidade: formData.especialidade.trim() || null,
+        area_interesse: formData.areaInteresse || null,
+        locacao: formData.locacao || null,
+      },
+    ]);
+
+    setLoading(false);
+
+    if (error) {
+      console.error("Supabase error:", error);
+      toast.error("Erro ao enviar. Tente novamente ou entre em contato pelo WhatsApp.");
+      return;
+    }
+
     onOpenChange(false);
+    navigate("/obrigado");
   };
 
   const update = (field: string, value: string) =>
@@ -70,7 +94,7 @@ const AgendarVisitaDialog = ({ open, onOpenChange }: AgendarVisitaDialogProps) =
                 Conheça a estrutura OnMed
               </DialogTitle>
               <DialogDescription className="text-muted-foreground text-sm mt-1">
-                Preencha o formulário e nossa equipe entrará em contato.
+                Preencha o formulário e nossa equipe entrará em contato em até 24h.
               </DialogDescription>
             </DialogHeader>
 
@@ -89,32 +113,46 @@ const AgendarVisitaDialog = ({ open, onOpenChange }: AgendarVisitaDialogProps) =
 
           {/* Right — form */}
           <form onSubmit={handleSubmit} className="p-8 flex flex-col gap-4">
-            <Input
-              placeholder="Nome"
-              value={formData.nome}
-              onChange={(e) => update("nome", e.target.value)}
-              maxLength={100}
-              required
-            />
-            <Input
-              type="email"
-              placeholder="E-mail"
-              value={formData.email}
-              onChange={(e) => update("email", e.target.value)}
-              maxLength={255}
-              required
-            />
-            <Input
-              placeholder="Telefone"
-              value={formData.telefone}
-              onChange={(e) => update("telefone", e.target.value)}
-              maxLength={20}
-              required
-            />
+            <div className="space-y-1">
+              <Label className="text-sm text-muted-foreground">Nome completo *</Label>
+              <Input
+                placeholder="Ex: Dr. João Silva"
+                value={formData.nome}
+                onChange={(e) => update("nome", e.target.value)}
+                maxLength={100}
+                required
+                disabled={loading}
+              />
+            </div>
 
-            {/* É médico? */}
+            <div className="space-y-1">
+              <Label className="text-sm text-muted-foreground">E-mail *</Label>
+              <Input
+                type="email"
+                placeholder="seu@email.com"
+                value={formData.email}
+                onChange={(e) => update("email", e.target.value)}
+                maxLength={255}
+                required
+                disabled={loading}
+              />
+            </div>
+
+            <div className="space-y-1">
+              <Label className="text-sm text-muted-foreground">Telefone / WhatsApp *</Label>
+              <Input
+                placeholder="(34) 9 9999-9999"
+                value={formData.telefone}
+                onChange={(e) => update("telefone", e.target.value)}
+                maxLength={20}
+                required
+                disabled={loading}
+              />
+            </div>
+
+            {/* É profissional de saúde? */}
             <div className="space-y-1.5">
-              <Label className="text-sm text-muted-foreground">Você é médico?</Label>
+              <Label className="text-sm text-muted-foreground">Você é profissional de saúde?</Label>
               <div className="flex gap-4">
                 {["Sim", "Não"].map((opt) => (
                   <label key={opt} className="flex items-center gap-2 cursor-pointer text-sm">
@@ -125,6 +163,7 @@ const AgendarVisitaDialog = ({ open, onOpenChange }: AgendarVisitaDialogProps) =
                       checked={formData.isMedico === opt}
                       onChange={(e) => update("isMedico", e.target.value)}
                       className="accent-primary"
+                      disabled={loading}
                     />
                     {opt}
                   </label>
@@ -132,16 +171,21 @@ const AgendarVisitaDialog = ({ open, onOpenChange }: AgendarVisitaDialogProps) =
               </div>
             </div>
 
-            <Input
-              placeholder="Qual sua especialização?"
-              value={formData.especialidade}
-              onChange={(e) => update("especialidade", e.target.value)}
-              maxLength={100}
-            />
+            <div className="space-y-1">
+              <Label className="text-sm text-muted-foreground">Especialidade / área de atuação</Label>
+              <Input
+                placeholder="Ex: Cardiologia, Psicologia..."
+                value={formData.especialidade}
+                onChange={(e) => update("especialidade", e.target.value)}
+                maxLength={100}
+                disabled={loading}
+              />
+            </div>
 
             <Select
               value={formData.areaInteresse}
               onValueChange={(v) => update("areaInteresse", v)}
+              disabled={loading}
             >
               <SelectTrigger>
                 <SelectValue placeholder="Área de interesse" />
@@ -157,7 +201,7 @@ const AgendarVisitaDialog = ({ open, onOpenChange }: AgendarVisitaDialogProps) =
             {/* Locação */}
             <div className="space-y-1.5">
               <Label className="text-sm text-muted-foreground">
-                Você está procurando locação de consultórios?
+                Procurando locação de consultório?
               </Label>
               <div className="flex gap-4 flex-wrap">
                 {["Sim", "Não", "Estudando opções"].map((opt) => (
@@ -169,6 +213,7 @@ const AgendarVisitaDialog = ({ open, onOpenChange }: AgendarVisitaDialogProps) =
                       checked={formData.locacao === opt}
                       onChange={(e) => update("locacao", e.target.value)}
                       className="accent-primary"
+                      disabled={loading}
                     />
                     {opt}
                   </label>
@@ -176,9 +221,20 @@ const AgendarVisitaDialog = ({ open, onOpenChange }: AgendarVisitaDialogProps) =
               </div>
             </div>
 
-            <Button type="submit" className="w-full mt-2">
-              Enviar
+            <Button type="submit" className="w-full mt-2" disabled={loading}>
+              {loading ? (
+                <>
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  Enviando...
+                </>
+              ) : (
+                "Solicitar visita"
+              )}
             </Button>
+
+            <p className="text-xs text-muted-foreground text-center">
+              Sem spam. Entraremos em contato em até 24h.
+            </p>
           </form>
         </div>
       </DialogContent>

@@ -19,20 +19,20 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-primary-foreground/50">
               <li className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5" />
-                <a href="https://wa.me/5534999999999" className="hover:text-primary-foreground transition-colors">
-                  (34) 99999-9999
+                <a href="https://wa.me/5534984253885" className="hover:text-primary-foreground transition-colors">
+                  (34) 98425-3885
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5" />
-                <a href="mailto:contato@onmed.com.br" className="hover:text-primary-foreground transition-colors">
-                  contato@onmed.com.br
+                <a href="mailto:gerencia@onmedcis.com.br" className="hover:text-primary-foreground transition-colors" title="Clique para enviar um e-mail">
+                  gerencia@onmedcis.com.br
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Instagram className="w-3.5 h-3.5" />
-                <a href="https://instagram.com/onmed" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors">
-                  @onmed
+                <a href="https://instagram.com/onmed.saude" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors">
+                  @onmed.saude
                 </a>
               </li>
             </ul>
@@ -40,10 +40,20 @@ const Footer = () => {
 
           <div>
             <h4 className="text-primary-foreground text-xs font-semibold uppercase tracking-wide mb-4">Localização</h4>
-            <p className="text-sm text-primary-foreground/50 leading-relaxed flex items-start gap-2">
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Rua+Rafael+Marino+Neto+600+Uberlandia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-primary-foreground/50 leading-relaxed flex items-start gap-2 hover:text-primary-foreground transition-colors"
+            >
               <MapPin className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
-              <span>Hospital Referência de Uberlândia<br />Uberlândia – MG</span>
-            </p>
+              <span>
+                Unidade UMC<br />
+                Rua Rafael Marino Neto, 600<br />
+                1º andar, Sala 182<br />
+                Jardim Karaíba, Uberlândia – MG
+              </span>
+            </a>
           </div>
         </div>
 
