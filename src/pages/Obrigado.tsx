@@ -36,20 +36,20 @@ const Obrigado = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                     <a
-                        href="https://wa.me/5534984253885"
+                        href="https://wa.me/5534984230201"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe57] text-white px-6 py-3 rounded text-sm font-semibold transition-colors"
                     >
                         <Phone className="w-4 h-4" />
-                        WhatsApp (34) 98425-3885
+                        WhatsApp (34) 98423-0201
                     </a>
                     <a
-                        href="mailto:gerencia@onmedcis.com.br"
+                        href="mailto:gerencia@onmedicbrasil.com.br"
                         className="inline-flex items-center justify-center gap-2 border border-border text-foreground px-6 py-3 rounded text-sm font-semibold hover:bg-muted transition-colors"
                     >
                         <Mail className="w-4 h-4" />
-                        gerencia@onmedcis.com.br
+                        gerencia@onmedicbrasil.com.br
                     </a>
                 </div>
 

@@ -36,7 +36,7 @@ const Profissionais = () => {
       <Header />
       <main>
         <EcossistemaHero
-          title="Profissionais OnMed"
+          title="Profissionais Onmedic"
           subtitle="Conheça os profissionais que atuam no nosso ecossistema de saúde e suas especialidades."
         />
         <section className="py-16 lg:py-24 bg-background">

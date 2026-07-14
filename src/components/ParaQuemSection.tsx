@@ -1,10 +1,10 @@
 import { Stethoscope, Brain, Activity, Apple, HeartPulse } from "lucide-react";
 
 const profiles = [
-  { icon: Stethoscope, label: "Médicos Especialistas", desc: "Cardiologistas, dermatologistas, ortopedistas e demais especialidades." },
+  { icon: Stethoscope, label: "Médicos", desc: "Clínicos gerais, especialistas e profissionais de diversas áreas médicas." },
   { icon: Brain, label: "Psicólogos", desc: "Salas com isolamento acústico e ambiente adequado para sessões." },
   { icon: Activity, label: "Fisioterapeutas", desc: "Espaço adaptado para avaliações e atendimentos clínicos." },
-  { icon: Apple, label: "Nutricionistas", desc: "Consultórios com equipamentos de avaliação disponíveis." },
+  { icon: Apple, label: "Nutricionistas", desc: "Ambiente adequado para consultas e acompanhamentos nutricionais." },
   { icon: HeartPulse, label: "Demais Profissionais", desc: "Fonoaudiólogos, terapeutas ocupacionais e outros profissionais da saúde." },
 ];
 
@@ -20,7 +20,7 @@ const ParaQuemSection = () => {
             Para profissionais da saúde
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A OnMed atende profissionais de diversas áreas da saúde que buscam
+            A Onmedic atende profissionais de diversas áreas da saúde que buscam
             estrutura de qualidade para seus atendimentos.
           </p>
         </div>

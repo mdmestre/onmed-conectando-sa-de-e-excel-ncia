@@ -8,7 +8,7 @@ const EcosistemaBanner = () => {
       <div className="absolute inset-0">
         <img
           src={doctorImg}
-          alt="Profissional de saúde OnMed"
+          alt="Profissional de saúde Onmedic"
           className="w-full h-full object-cover object-top"
           loading="lazy"
         />
@@ -22,7 +22,7 @@ const EcosistemaBanner = () => {
           </h2>
           <p className="text-primary-foreground/80 text-base md:text-lg leading-relaxed mb-10 max-w-lg">
             Oferecemos uma estrutura completa com diversos benefícios integrados.
-            Faça parte do ecossistema OnMed.
+            Faça parte do ecossistema Onmedic.
           </p>
 
           <div className="flex flex-wrap items-center gap-6 md:gap-10 mb-10">

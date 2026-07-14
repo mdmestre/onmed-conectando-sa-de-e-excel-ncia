@@ -13,27 +13,36 @@ import EmocionalSection from "@/components/EmocionalSection";
 import EcosistemaBanner from "@/components/EcosistemaBanner";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
+import MobileExperience from "@/components/mobile/MobileExperience";
 
 const Index = () => {
   return (
     <>
-      <Header />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <EstruturaSection />
-        <DiferenciaisSection />
-        <ParaQuemSection />
-        <ModeloSection />
-        <ComparativoSection />
-        <ProvasSociaisSection />
-        <TestimonialsSection />
-        <EmocionalSection />
-        <EcosistemaBanner />
-        <CtaSection />
-      </main>
-      <Footer />
-      <WhatsAppButton />
+      {/* Desktop — inalterado, visível apenas a partir de lg */}
+      <div className="hidden lg:block">
+        <Header />
+        <main>
+          <HeroSection />
+          <AboutSection />
+          <EstruturaSection />
+          <DiferenciaisSection />
+          <ParaQuemSection />
+          <ModeloSection />
+          <ComparativoSection />
+          <ProvasSociaisSection />
+          <TestimonialsSection />
+          <EmocionalSection />
+          <EcosistemaBanner />
+          <CtaSection />
+        </main>
+        <Footer />
+        <WhatsAppButton />
+      </div>
+
+      {/* Mobile — experiência independente, tipo app */}
+      <div className="lg:hidden">
+        <MobileExperience />
+      </div>
     </>
   );
 };

@@ -7,7 +7,7 @@ const EmocionalSection = () => {
             Seu foco no paciente. Nossa responsabilidade com todo o resto.
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-10 max-w-xl mx-auto">
-            A OnMed cuida da estrutura, da recepção, da gestão financeira e da
+            A Onmedic cuida da estrutura, da recepção, da gestão financeira e da
             tecnologia para que o profissional possa se dedicar integralmente ao
             que mais importa: o atendimento de excelência.
           </p>

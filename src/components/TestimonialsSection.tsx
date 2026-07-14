@@ -1,10 +1,10 @@
-import { Quote } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 
 const testimonials = [
     {
         name: "Dr. Rafael Mendonça",
         specialty: "Cardiologista • CRM-MG 48.291",
-        text: "A OnMed resolveu o que mais me travava no início da carreira: ter estrutura hospitalar sem precisar bancar tudo sozinho. Hoje atendo com tranquilidade e foco total no paciente.",
+        text: "A Onmedic resolveu o que mais me travava no início da carreira: ter estrutura hospitalar sem precisar bancar tudo sozinho. Hoje atendo com tranquilidade e foco total no paciente.",
         initial: "RM",
         color: "bg-primary",
     },
@@ -26,17 +26,19 @@ const testimonials = [
 
 const TestimonialsSection = () => {
     return (
-        <section className="py-24 lg:py-32 bg-background">
-            <div className="container mx-auto px-6">
+        <section className="py-24 lg:py-32 bg-background relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-secondary/4 rounded-full blur-[100px] pointer-events-none" />
+
+            <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <span className="text-xs font-semibold text-muted-foreground uppercase tracking-[0.2em] mb-4 block">
+                    <span className="text-[10.5px] font-bold text-primary uppercase tracking-[0.2em] mb-4 block">
                         Depoimentos
                     </span>
-                    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
                         O que dizem os profissionais
                     </h2>
-                    <p className="text-muted-foreground max-w-xl mx-auto">
-                        Quem já atende na OnMed sabe a diferença que faz ter estrutura
+                    <p className="text-muted-foreground max-w-xl mx-auto text-[0.97rem]">
+                        Quem já atende na Onmedic sabe a diferença que faz ter estrutura
                         hospitalar com gestão inteligente.
                     </p>
                 </div>
@@ -45,11 +47,19 @@ const TestimonialsSection = () => {
                     {testimonials.map((t) => (
                         <div
                             key={t.name}
-                            className="bg-card border border-border rounded-xl p-8 flex flex-col gap-6 hover:shadow-md transition-shadow duration-300"
+                            className="group bg-white border border-border rounded-2xl p-8 flex flex-col gap-6 hover:border-primary/25 hover:shadow-[0_16px_48px_-8px_hsl(207_79%_38%/0.14)] transition-all duration-400 hover:-translate-y-1"
                         >
-                            <Quote className="w-7 h-7 text-primary/30" />
+                            {/* Stars + Quote */}
+                            <div className="flex items-center justify-between">
+                                <div className="flex gap-0.5">
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                                    ))}
+                                </div>
+                                <Quote className="w-6 h-6 text-primary/20" />
+                            </div>
 
-                            <p className="text-foreground/80 leading-relaxed text-sm flex-1">
+                            <p className="text-foreground/75 leading-relaxed text-[13.5px] flex-1 italic">
                                 "{t.text}"
                             </p>
 
@@ -60,10 +70,10 @@ const TestimonialsSection = () => {
                                     {t.initial}
                                 </div>
                                 <div>
-                                    <span className="font-semibold text-foreground text-sm block">
+                                    <span className="font-semibold text-foreground text-[13.5px] block">
                                         {t.name}
                                     </span>
-                                    <span className="text-xs text-muted-foreground">
+                                    <span className="text-[11px] text-muted-foreground/70">
                                         {t.specialty}
                                     </span>
                                 </div>

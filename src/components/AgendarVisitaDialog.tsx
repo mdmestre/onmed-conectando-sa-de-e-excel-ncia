@@ -83,15 +83,32 @@ const AgendarVisitaDialog = ({ open, onOpenChange }: AgendarVisitaDialogProps) =
   const update = (field: string, value: string) =>
     setFormData((prev) => ({ ...prev, [field]: value }));
 
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value.replace(/\D/g, "");
+    if (value.length > 11) value = value.slice(0, 11);
+    
+    if (value.length > 10) {
+      value = value.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
+    } else if (value.length > 6) {
+      value = value.replace(/(\d{2})(\d{4})(\d{0,4})/, "($1) $2-$3");
+    } else if (value.length > 2) {
+      value = value.replace(/(\d{2})(\d{0,5})/, "($1) $2");
+    } else if (value.length > 0) {
+      value = `(${value}`;
+    }
+    
+    update("telefone", value);
+  };
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-3xl p-0 gap-0 overflow-hidden">
-        <div className="grid md:grid-cols-2">
+      <DialogContent className="sm:max-w-3xl p-0 gap-0 overflow-hidden max-h-[90vh]">
+        <div className="grid md:grid-cols-2 h-full max-h-[90vh]">
           {/* Left — highlights */}
-          <div className="bg-muted/40 p-8 flex flex-col justify-center gap-6 border-r border-border">
+          <div className="bg-muted/40 p-6 md:p-8 flex flex-col justify-center gap-6 border-r border-border overflow-y-auto">
             <DialogHeader className="text-left">
               <DialogTitle className="text-2xl font-bold leading-tight">
-                Conheça a estrutura OnMed
+                Conheça a estrutura Onmedic
               </DialogTitle>
               <DialogDescription className="text-muted-foreground text-sm mt-1">
                 Preencha o formulário e nossa equipe entrará em contato em até 24h.
@@ -112,7 +129,7 @@ const AgendarVisitaDialog = ({ open, onOpenChange }: AgendarVisitaDialogProps) =
           </div>
 
           {/* Right — form */}
-          <form onSubmit={handleSubmit} className="p-8 flex flex-col gap-4">
+          <form onSubmit={handleSubmit} className="p-6 md:p-8 flex flex-col gap-4 overflow-y-auto">
             <div className="space-y-1">
               <Label className="text-sm text-muted-foreground">Nome completo *</Label>
               <Input
@@ -141,10 +158,10 @@ const AgendarVisitaDialog = ({ open, onOpenChange }: AgendarVisitaDialogProps) =
             <div className="space-y-1">
               <Label className="text-sm text-muted-foreground">Telefone / WhatsApp *</Label>
               <Input
-                placeholder="(34) 9 9999-9999"
+                placeholder="(34) 99999-9999"
                 value={formData.telefone}
-                onChange={(e) => update("telefone", e.target.value)}
-                maxLength={20}
+                onChange={handlePhoneChange}
+                maxLength={15}
                 required
                 disabled={loading}
               />

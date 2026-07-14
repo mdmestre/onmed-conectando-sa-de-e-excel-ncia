@@ -95,10 +95,10 @@ const ComparativoSection = () => {
               Comparativo
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Por que a OnMed é a escolha certa
+              Por que a Onmedic é a escolha certa
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Compare e veja o que você ganha ao escolher a OnMed em vez de
+              Compare e veja o que você ganha ao escolher a Onmedic em vez de
               montar um consultório próprio ou alugar um espaço avulso.
             </p>
           </div>
@@ -113,7 +113,7 @@ const ComparativoSection = () => {
                   </th>
                   <th className="px-6 py-4 text-center">
                     <span className="inline-block bg-primary text-primary-foreground text-xs font-bold px-3 py-1.5 rounded-full">
-                      OnMed
+                      Onmedic
                     </span>
                   </th>
                   <th className="px-6 py-4 text-center text-xs font-semibold text-muted-foreground uppercase tracking-wide">

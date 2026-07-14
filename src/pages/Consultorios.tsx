@@ -36,7 +36,7 @@ const Consultorios = () => {
       <Header />
       <main>
         <EcossistemaHero
-          title="Consultórios OnMed"
+          title="Consultórios Onmedic"
           subtitle="Confira abaixo os consultórios que fazem parte do nosso ecossistema e clique para conhecer cada especialidade."
         />
         <section className="py-16 lg:py-24 bg-background">

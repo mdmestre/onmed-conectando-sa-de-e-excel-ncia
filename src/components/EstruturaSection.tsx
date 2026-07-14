@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
-import recepcaoImg from "@/assets/recepcao.jpg";
-import consultorioImg from "@/assets/consultorio.jpg";
-import heroImg from "@/assets/hero-clinic.jpg";
+import { ArrowRight, Play } from "lucide-react";
+import recepcaoImg from "@/assets/recepcao.png";
+import consultorioImg from "@/assets/consultorio.png";
+import heroImg from "@/assets/hero-clinic.png";
 import AgendarVisitaDialog from "@/components/AgendarVisitaDialog";
 
 const spaces = [
@@ -13,6 +13,7 @@ const spaces = [
 
 const EstruturaSection = () => {
   const [agendarOpen, setAgendarOpen] = useState(false);
+  const [videoPlaying, setVideoPlaying] = useState(false);
 
   return (
     <section id="estrutura" className="py-24 lg:py-32 bg-muted/30">
@@ -47,6 +48,44 @@ const EstruturaSection = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Tour em vídeo */}
+        <div className="mt-14">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-foreground mb-2">Conheça a clínica em vídeo</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Faça um tour em vídeo pelos nossos ambientes antes mesmo de agendar sua visita.
+            </p>
+          </div>
+          <div className="relative rounded-lg overflow-hidden border border-border bg-card max-w-3xl mx-auto aspect-video">
+            {videoPlaying ? (
+              <video
+                src="/videos/clinica-onmedic-tour.mp4"
+                controls
+                autoPlay
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <button
+                onClick={() => setVideoPlaying(true)}
+                aria-label="Reproduzir vídeo da clínica"
+                className="group absolute inset-0 w-full h-full"
+              >
+                <img
+                  src={heroImg}
+                  alt="Tour em vídeo da Onmedic"
+                  className="w-full h-full object-cover"
+                />
+                <span className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors" />
+                <span className="absolute inset-0 flex items-center justify-center">
+                  <span className="flex items-center justify-center w-20 h-20 rounded-full bg-white/90 group-hover:scale-110 transition-transform shadow-lg">
+                    <Play className="w-8 h-8 text-primary ml-1" fill="currentColor" />
+                  </span>
+                </span>
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Mini-CTA */}
