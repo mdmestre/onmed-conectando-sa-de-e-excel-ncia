@@ -1,103 +1,74 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import heroImg from "@/assets/hero-clinic.png";
-
-const EASE = [0.22, 1, 0.36, 1] as const;
-const GREEN_GRADIENT = "linear-gradient(135deg, #7CC0B0 0%, #4F9D89 55%, #2E7F73 100%)";
+import { mobileColors, EASE } from "./mobileTheme";
 
 interface MobileHeroProps {
-  onAgendar: () => void;
+  onSejaMembro: () => void;
 }
 
-const MobileHero = ({ onAgendar }: MobileHeroProps) => {
+const MobileHero = ({ onSejaMembro }: MobileHeroProps) => {
   return (
-    <section className="relative h-[100dvh] w-full overflow-hidden flex flex-col">
-      {/* Fundo cinematográfico */}
-      <div className="absolute inset-0">
-        <img
+    <section className="relative bg-[#FAF9F7] pt-[88px]">
+      {/* Imagem — recepção Onmedic, ~50% da tela */}
+      <div className="relative h-[52vh] min-h-[340px] overflow-hidden">
+        <motion.img
           src={heroImg}
-          alt="Ambiente premium Onmedic"
+          alt="Recepção premium da Onmedic"
           className="w-full h-full object-cover"
           loading="eager"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.72) 18%, rgba(255,255,255,0.55) 42%, rgba(255,255,255,0.62) 60%, rgba(255,255,255,0.94) 88%, rgba(255,255,255,1) 100%)",
-          }}
+          initial={{ scale: 1.08, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.1, ease: EASE }}
         />
       </div>
 
-      {/* Conteúdo central */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-7 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: EASE, delay: 0.15 }}
-          className="font-['DM_Serif_Display'] font-normal text-[2.6rem] leading-[1.12] text-[#0A2E5D]"
+      {/* Bloco branco sobreposto */}
+      <motion.div
+        initial={{ opacity: 0, y: 28 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.25, ease: EASE }}
+        className="relative -mt-8 bg-[#FAF9F7] rounded-t-[28px] px-6 pt-9 pb-10"
+      >
+        <h1
+          className="leading-[1.18]"
+          style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "2.15rem", color: mobileColors.text }}
         >
-          Você cuida
-          <br />
-          das pessoas.
-          <br />
-          <span className="block mt-2">Nós cuidamos</span>
-          <span
-            style={{
-              background: GREEN_GRADIENT,
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            do restante.
-          </span>
-        </motion.h1>
+          O espaço ideal para você focar no que realmente importa:{" "}
+          <span style={{ color: mobileColors.green }}>seus pacientes.</span>
+        </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: EASE, delay: 0.35 }}
-          className="mt-6 text-[0.95rem] text-[#0A2E5D]/65 leading-relaxed max-w-[300px]"
+        <p
+          className="mt-5 leading-relaxed"
+          style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.95rem", color: `${mobileColors.text}99` }}
         >
-          Um ecossistema completo para profissionais que desejam crescer sem
-          carregar toda a operação nas costas.
-        </motion.p>
+          Infraestrutura premium. Gestão profissional. Ecossistema completo
+          para profissionais da saúde.
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: EASE, delay: 0.5 }}
-          className="mt-9 w-full max-w-[320px] flex flex-col items-center gap-3.5"
-        >
+        <div className="mt-8 flex flex-col gap-3.5">
           <button
-            onClick={onAgendar}
-            className="group w-full py-4.5 rounded-full bg-[#0F5FAE] text-white text-[12px] font-bold tracking-[0.12em] uppercase shadow-[0_10px_30px_-8px_rgba(15,95,174,0.5)] active:scale-[0.97] transition-transform duration-200 flex items-center justify-center gap-2.5"
+            onClick={onSejaMembro}
+            className="w-full py-4 rounded-full text-white font-semibold flex items-center justify-center gap-2 active:scale-[0.98] transition-transform"
+            style={{ background: mobileColors.blue, fontFamily: "'Inter', sans-serif", fontSize: "0.85rem" }}
           >
-            Agendar conversa
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-active:translate-x-1" />
+            Seja Membro
+            <ArrowRight className="w-4 h-4" strokeWidth={1.8} />
           </button>
           <a
-            href="#sobre"
-            className="w-full py-4.5 rounded-full border border-[#0A2E5D]/15 text-[#0A2E5D] text-[12px] font-bold tracking-[0.12em] uppercase flex items-center justify-center"
+            href="#diferenciais"
+            className="w-full py-4 rounded-full flex items-center justify-center border-2 active:scale-[0.98] transition-transform"
+            style={{
+              borderColor: mobileColors.blue,
+              color: mobileColors.blue,
+              fontFamily: "'Inter', sans-serif",
+              fontSize: "0.85rem",
+              fontWeight: 600,
+            }}
           >
-            Conheça a Onmedic
+            Conheça o Espaço
           </a>
-        </motion.div>
-      </div>
-
-      {/* Indicador de scroll */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="relative z-10 flex justify-center pb-8"
-      >
-        <motion.div
-          animate={{ height: [8, 22, 8] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          className="w-[2px] rounded-full bg-[#0A2E5D]/30"
-        />
+        </div>
       </motion.div>
     </section>
   );

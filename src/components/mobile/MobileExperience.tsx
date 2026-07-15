@@ -1,14 +1,22 @@
 import { useState } from "react";
-import MobileHeader from "./MobileHeader";
+import MobileNavbar from "./MobileNavbar";
 import MobileHero from "./MobileHero";
-import MobileBenefitsCarousel from "./MobileBenefitsCarousel";
-import MobilePhotoStatement from "./MobilePhotoStatement";
-import MobileTimeline from "./MobileTimeline";
-import MobileGallery from "./MobileGallery";
-import MobileStats from "./MobileStats";
-import MobileCTA from "./MobileCTA";
+import MobileDiferenciais from "./MobileDiferenciais";
+import MobileProblem from "./MobileProblem";
+import MobileSolution from "./MobileSolution";
+import MobileInfraGallery from "./MobileInfraGallery";
+import MobileAmbientes from "./MobileAmbientes";
+import MobileTechnology from "./MobileTechnology";
+import MobileCommunity from "./MobileCommunity";
+import MobileBenefits from "./MobileBenefits";
+import MobileResults from "./MobileResults";
+import MobileTestimonials from "./MobileTestimonials";
+import MobileProcess from "./MobileProcess";
+import MobileCtaVisita from "./MobileCtaVisita";
+import MobileFAQ from "./MobileFAQ";
+import MobileCTAFinal from "./MobileCTAFinal";
 import MobileFooter from "./MobileFooter";
-import AgendarVisitaDialog from "@/components/AgendarVisitaDialog";
+import MobileAgendarSheet from "./MobileAgendarSheet";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const MobileExperience = () => {
@@ -16,18 +24,26 @@ const MobileExperience = () => {
   const openAgendar = () => setAgendarOpen(true);
 
   return (
-    <div className="bg-white">
-      <MobileHeader onAgendar={openAgendar} />
-      <MobileHero onAgendar={openAgendar} />
-      <MobileBenefitsCarousel />
-      <MobilePhotoStatement />
-      <MobileTimeline />
-      <MobileGallery />
-      <MobileStats />
-      <MobileCTA onAgendar={openAgendar} />
+    <div className="bg-[#FAF9F7]">
+      <MobileNavbar onSejaMembro={openAgendar} />
+      <MobileHero onSejaMembro={openAgendar} />
+      <MobileDiferenciais />
+      <MobileProblem />
+      <MobileSolution />
+      <MobileInfraGallery />
+      <MobileAmbientes />
+      <MobileTechnology />
+      <MobileCommunity />
+      <MobileBenefits />
+      <MobileResults />
+      <MobileTestimonials />
+      <MobileProcess />
+      <MobileCtaVisita onAgendar={openAgendar} />
+      <MobileFAQ />
+      <MobileCTAFinal onSejaMembro={openAgendar} />
       <MobileFooter />
       <WhatsAppButton />
-      <AgendarVisitaDialog open={agendarOpen} onOpenChange={setAgendarOpen} />
+      <MobileAgendarSheet open={agendarOpen} onOpenChange={setAgendarOpen} />
     </div>
   );
 };

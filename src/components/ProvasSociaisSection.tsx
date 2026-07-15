@@ -2,7 +2,7 @@ import { Users, Building2, Calendar, Stethoscope } from "lucide-react";
 
 const stats = [
   { icon: Users, value: "30+", label: "Profissionais ativos" },
-  { icon: Building2, value: "12", label: "Consultórios" },
+  { icon: Building2, value: "13", label: "Consultórios" },
   { icon: Stethoscope, value: "15+", label: "Especialidades" },
   { icon: Calendar, value: "2.000+", label: "Consultas por mês" },
 ];

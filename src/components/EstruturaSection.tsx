@@ -60,11 +60,12 @@ const EstruturaSection = () => {
           </div>
           <div className="relative rounded-lg overflow-hidden border border-border bg-card max-w-3xl mx-auto aspect-video">
             {videoPlaying ? (
-              <video
-                src="/videos/clinica-onmedic-tour.mp4"
-                controls
-                autoPlay
-                className="w-full h-full object-cover"
+              <iframe
+                src="https://player.vimeo.com/video/1210209744?title=0&byline=0&portrait=0"
+                className="w-full h-full"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                title="Tour em vídeo da clínica Onmedic"
               />
             ) : (
               <button

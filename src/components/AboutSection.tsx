@@ -40,7 +40,7 @@ const AboutSection = () => {
             <div className="mt-10 pt-8 border-t border-border">
               <div className="grid grid-cols-3 gap-6 text-center">
                 {[
-                  { val: "12", label: "Consultórios" },
+                  { val: "13", label: "Consultórios" },
                   { val: "15+", label: "Especialidades" },
                   { val: "30+", label: "Profissionais" },
                 ].map((s) => (
