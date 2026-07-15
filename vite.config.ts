@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/onmed-conectando-sa-de-e-excel-ncia/",
+  base: mode === "development" ? "/" : "/Paulo.Site-Onmedic/",
   server: {
     host: "::",
     port: 8080,
