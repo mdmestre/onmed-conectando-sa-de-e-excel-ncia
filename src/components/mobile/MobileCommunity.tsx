@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import facaparteImg from "@/assets/facaparte.png";
+import facaparteImg from "@/assets/Facaparte.png";
 import { mobileColors, EASE } from "./mobileTheme";
 
 const tags = ["Networking", "Eventos", "Parcerias", "Troca de experiências"];
